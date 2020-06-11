@@ -1,0 +1,45 @@
+intents:
+  - affirm
+  - deny
+  - lastname
+  - firstname
+  - feedback
+  - request_details
+
+slots:
+  feedback:
+    type: text
+    auto_fill: false
+  firstn:
+    type: text
+    auto_fill: false
+  lastn:
+    type: text
+    auto_fill: false
+
+responses:
+  utter_first_name:
+  - text: Please provide your first name
+  utter_last_name:
+  - text: Please provide your last name
+  utter_feedback:
+  - text: Please provide your feedback
+  utter_submit:
+  - text: would you like to submit the details?
+  utter_thanks:
+  - text: thanks for your feedback
+
+actions:
+- utter_feedback
+- utter_last_name
+- utter_first_name
+- utter_submit
+- utter_thanks
+- action_feedback_submit
+- action_last_name
+- action_feedback
+- action_submit
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
